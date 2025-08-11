@@ -1,4 +1,4 @@
-import { Calendar, ChevronDown, ChevronUp, Home, Inbox, Search, Settings, User2 } from "lucide-react";
+import { Calendar, ChevronDown, ChevronUp, Home, Inbox, Search, Settings, User2,Plus, Projector } from "lucide-react";
 import React from "react";
 import {
     Sidebar,
@@ -14,6 +14,7 @@ import {
   SidebarProvider,
   SidebarSeparator,
   SidebarTrigger,
+  SidebarGroupAction
 } from "./ui/sidebar";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
@@ -50,7 +51,7 @@ export default function Appsidebar() {
   return (
 
       <Sidebar collapsible="icon">
-        <SidebarHeader>
+        <SidebarHeader className="py-4">
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton asChild>
@@ -83,6 +84,37 @@ export default function Appsidebar() {
                 ))}
               </SidebarMenu>
             </SidebarGroupContent>
+          </SidebarGroup>
+          {/* another group for group action */}
+          <SidebarGroup>
+            <SidebarGroupLabel>Projects</SidebarGroupLabel>
+              <SidebarGroupAction>
+            <Plus /> <span className="sr-only">Add Project</span>
+          </SidebarGroupAction>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/#">
+                  <Projector/>
+                    <span>See All Projects</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent> 
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/#">
+                  <Plus/>
+                    <span>Add Projects</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
           </SidebarGroup>
         </SidebarContent>
         <SidebarFooter>

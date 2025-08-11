@@ -18,7 +18,7 @@ import { SidebarTrigger } from "./ui/sidebar";
 export default function Navbar() {
     const { setTheme } = useTheme();
   return (
-    <div>
+    <div className="py-4">
       <div className="flex items-center px-4 justify-between">
         <SidebarTrigger/>
         <div className="flex items-center gap-x-4">

@@ -14,11 +14,16 @@ import {
   SidebarProvider,
   SidebarSeparator,
   SidebarTrigger,
-  SidebarGroupAction
+  SidebarGroupAction,
+  SidebarMenuBadge,
+  SidebarMenuSub,
+  SidebarMenuSubItem,
+  SidebarMenuSubButton
 } from "./ui/sidebar";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { DropdownMenu, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuContent } from "./ui/dropdown-menu";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./ui/collapsible";
 
 const items = [
   {
@@ -80,17 +85,24 @@ export default function Appsidebar() {
                         <span>{item.title}</span>
                       </Link>
                     </SidebarMenuButton>
+                    {item.title === "Inbox" && <SidebarMenuBadge>24</SidebarMenuBadge>}
                   </SidebarMenuItem>
                 ))}
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
           {/* another group for group action */}
+           <Collapsible defaultOpen className="group/collapsible">
           <SidebarGroup>
-            <SidebarGroupLabel>Projects</SidebarGroupLabel>
-              <SidebarGroupAction>
-            <Plus /> <span className="sr-only">Add Project</span>
-          </SidebarGroupAction>
+            <SidebarGroupLabel asChild >
+             <CollapsibleTrigger>
+             Projects 
+            <ChevronDown className="ml-auto w-4 transition-transform group-data-[state=open]/collapsible:rotate-180" />
+          </CollapsibleTrigger>
+          </SidebarGroupLabel>
+          
+             <CollapsibleContent>
+         
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
@@ -108,14 +120,16 @@ export default function Appsidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <Link href="/#">
-                  <Plus/>
+                  <Plus/> 
                     <span>Add Projects</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
+              </CollapsibleContent>
           </SidebarGroup>
+          </Collapsible>
         </SidebarContent>
         <SidebarFooter>
             <SidebarMenu>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Card, CardContent, CardFooter, CardTitle } from "./ui/card";
-import { Badge } from "lucide-react";
+import { Badge } from "./ui/badge";
+
 
 
 const popularContent = [
@@ -88,7 +89,7 @@ const latestTransactions = [
       "https://images.pexels.com/photos/1680175/pexels-photo-1680175.jpeg?auto=compress&cs=tinysrgb&w=800",
     count: 1400,
   },
-  // ... rest of latestTransactions items
+  
 ];
 
 const CardList = ({ title }) => {

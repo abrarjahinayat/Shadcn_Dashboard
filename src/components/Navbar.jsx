@@ -18,8 +18,8 @@ import { SidebarTrigger } from "./ui/sidebar";
 export default function Navbar() {
     const { setTheme } = useTheme();
   return (
-    <div className="py-4">
-      <div className="flex items-center px-4 justify-between">
+    <div className="py-4 sticky top-0 bg-background z-50">
+      <div className="flex items-center px-4 justify-between ">
         <SidebarTrigger/>
         <div className="flex items-center gap-x-4">
           <Link href="/">Dashboard</Link>
@@ -51,7 +51,7 @@ export default function Navbar() {
               {" "}
               <Avatar>
                 <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>CN</AvatarFallback>
+                <AvatarFallback>AB</AvatarFallback>
               </Avatar>
             </DropdownMenuTrigger>
             <DropdownMenuContent>

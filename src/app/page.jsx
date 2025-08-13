@@ -1,6 +1,7 @@
 import Areachart from "@/components/Areachart";
 import CardList from "@/components/CardList";
 import Chart from "@/components/Chart";
+import { ChartPieInteractive } from "@/components/ChartPieInteractive";
 import Todolist from "@/components/Todolist";
 import React from "react";
 const page = () => {
@@ -13,7 +14,7 @@ const page = () => {
       <div className="bg-primary-foreground p-4 rounded-lg ">
         <CardList title="Latest Transactions" />
       </div>
-      <div className="bg-primary-foreground p-4 rounded-lg ">Test</div>
+      <div className="bg-primary-foreground p-4 rounded-lg "> <ChartPieInteractive/> </div>
       <div className="bg-primary-foreground p-4 rounded-lg ">
         {" "}
         <Todolist />{" "}

@@ -1,4 +1,4 @@
-import { Calendar, ChevronDown, ChevronUp, Home, Inbox, Search, Settings, User2,Plus, Projector } from "lucide-react";
+import { Calendar, ChevronDown, ChevronUp, Home, Inbox, Search, Settings, User2,Plus, Projector, CreditCard } from "lucide-react";
 import React from "react";
 import {
     Sidebar,
@@ -32,6 +32,15 @@ const items = [
     icon: Home,
   },
   {
+    title: "Users",
+    url: "/user",
+    icon: User2,
+  },{
+    title: "Payments",
+    url: "/payments",
+    icon: CreditCard,
+  },
+  {
     title: "Inbox",
     url: "#",
     icon: Inbox,
@@ -54,7 +63,7 @@ const items = [
 ];
 export default function Appsidebar() {
   return (
-
+      
       <Sidebar collapsible="icon">
         <SidebarHeader className="py-4">
           <SidebarMenu>

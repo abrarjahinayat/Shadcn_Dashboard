@@ -20,6 +20,7 @@ import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import CardList from "@/components/CardList";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import UserLineChart from "@/components/UserLineChart";
 
 const Singleuserpage = () => {
   return (
@@ -175,7 +176,7 @@ const Singleuserpage = () => {
           {/* CHART CONTAINER */}
           <div className="bg-primary-foreground p-4 rounded-lg">
             <h1 className="text-xl font-semibold">User Activity</h1>
-            
+            <UserLineChart/>
           </div>
         </div>
       </div>
